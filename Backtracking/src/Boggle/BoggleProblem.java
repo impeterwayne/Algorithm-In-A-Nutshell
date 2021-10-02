@@ -12,6 +12,7 @@ public class BoggleProblem {
 							{'A','C','B','O'}};
 		int visited[][] = new int[M][N];
 		String str = "";
+		//Loop through all character
 		for(int i=0; i<M; i++)
 		{
 			for(int j=0; j<N; j++)
@@ -30,17 +31,19 @@ public class BoggleProblem {
 		{
 			System.out.println(word);
 		}
+		//loop through every choice
 		for(int row = i-1; row<=i+1;row++)
 		{
 			for(int col = j-1; col<=j+1; col++)
 			{
-				if(isValid(row, col,visited))
+				if(isValid(row, col,visited)) // constraint
 				{
+					//recursion
 					findWords(boggle, visited, row, col, word);
 				}
 			}
 		}
-		visited[i][j] =0;
+		visited[i][j] =0; // backtracking
 	}
 	private static boolean isValid(int row, int col, int[][] visited) {
 		
