@@ -13,7 +13,7 @@ public class KnightTourProblem {
 							{ 0, 0, 0, 0, 0, 0, 0, 0 }, 
 							{ 0, 0, 0, 0, 0, 0, 0, 0 } };
 		
-		if (knightTour(board,2, 3, 0)) {
+		if (knightTour(board,0, 0, 0)) {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
 					System.out.print(board[i][j] + " ");
@@ -27,11 +27,15 @@ public class KnightTourProblem {
 	}
 
 	private static boolean knightTour(int[][] board, int row, int col, int step) {
+		//goal
 		if(step ==63) return true;
+		//loop through all paths
 		for (int i = 0; i < 8; i++) {
+			//constraint
 			if (moveIsValid(board, row+ path[i][0], col+path[i][1])) {
 				step++;
 				board[row+ path[i][0]][col+ path[i][1]] = step;
+				//recursion
 				if (knightTour(board,row+ path[i][0] , col+path[i][1], step))
 					return true;
 				step--;
@@ -43,6 +47,7 @@ public class KnightTourProblem {
 
 	}
 
+	
 	private static boolean moveIsValid(int[][] board, int row, int col) {
 			return  row>=0&&row<8
 					&&
