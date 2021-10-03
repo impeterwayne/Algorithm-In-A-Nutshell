@@ -37,6 +37,7 @@ public class MergeSort {
 		{
 			B[i] = arr[mid+1+i];
 		}
+		// compare each elements in two arrays then put them into original array, k = low
 		int i =0, j= 0, k = low;
 		while(i<len1&&j<len2)
 		{
