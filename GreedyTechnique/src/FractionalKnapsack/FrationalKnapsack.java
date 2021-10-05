@@ -13,11 +13,12 @@ public class FrationalKnapsack {
 	}
 
 	private static double getMaxValue(int[] value, int[] weight, int capacity) {
-		// TODO Auto-generated method stub
+		
 		Item[] items = new Item[weight.length];
 		for (int i = 0; i < items.length; i++) {
 			items[i] = new Item(value[i], weight[i], i);
 		}
+		//Sort to choose the best choice in each step
 		Arrays.sort(items, new Comparator<Item>() {
 			@Override
 			public int compare(Item o1, Item o2) {
@@ -37,6 +38,7 @@ public class FrationalKnapsack {
 				totalValue+=currentValue;
 			}else
 			{
+				//when there isn't any item fit the weight, we call that a fraction
 				double fraction = (double) capacity/(double)currentWeight;
 				totalValue += currentValue*fraction;
 				break;
