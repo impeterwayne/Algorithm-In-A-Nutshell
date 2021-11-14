@@ -4,9 +4,9 @@ public class RatInMaze {
 
 	public static void main(String[] args) {
 		int[][] maze = {{ 1, 1, 0, 0 }, 
-						{ 1, 1, 0, 1 },
-						{ 1, 1, 0, 0 }, 
-						{ 0, 1, 1, 1 } };
+				{ 1, 1, 0, 1 },
+				{ 1, 1, 0, 0 }, 
+				{ 0, 1, 1, 1 } };
 		int n = maze.length;
 		int[][] sol = new int[n][n];
 		solveTheMaze(maze, 0, 0, sol, n);
