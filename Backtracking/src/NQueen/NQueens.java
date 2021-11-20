@@ -4,7 +4,7 @@ public class NQueens {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 int[][] board = {	{0,0,0,0,0},
+		 int[][] board = {			{0,0,0,0,0},
 				 			{0,0,0,0,0},
 				 			{0,0,0,0,0},
 				 			{0,0,0,0,0},
