@@ -35,8 +35,6 @@ class Node
 		printInOrder(node.left);
 		System.out.println(node.value+ " ");
 		printInOrder(node.right);
-		
-		
 	}
 	public int convertIntoSumTree(Node node) {
 		if(node == null) return 0;
@@ -45,6 +43,5 @@ class Node
 		int rightTreeSum = convertIntoSumTree(node.right);
 		node.value = leftTreeSum + rightTreeSum;
 		return node.value + oldValue;
-		
 	}
 }
